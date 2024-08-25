@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+
+    *{
+        box-sizing: border-box;
+    }
+    body{
+        /* transition-property: all;
+        transition-duration: 3s; */
+        /* box-sizing: border-box; */
+        margin: 0;
+        font-family: sans-serif;
+
+        border: 1px solid black;
+        width: 100vw;
+        overflow-x: hidden;
+        width: 100vw;
+    }
+    .nav{
+        display: flex;
+        justify-content: space-around;
+       
+        background-color: white;
+        padding: 10px 18px;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+
+    }
+    ul{
+        display: flex;
+        gap: 10%;
+        list-style-type: none;
+        font-size: 12px;
+        font-weight: 900;
+        font-family: sans-serif;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    a:hover{
+        color: rgb(40, 226, 226);
+        
+    }
+    b:hover{
+        color: rgb(57, 60, 60);
+    }
+    .home{
+        background: linear-gradient( rgba(20, 20, 20, 0.5), rgba(24, 24, 24, 0.5) ),url(./home-bg.jpg);
+        /* background-image: url(./home-bg.jpg); */
+        height: 100vh;
+        width: 99vw;
+        background-size:cover ;
+        background-repeat: no-repeat;
+        text-align: center;
+        /* background-size:contain;  */
+       
+    }
+    .third{
+        /* display: flex;
+        justify-content: center;
+        padding: 10%;
+        gap:20px; */
+        width: 100vw;
+        display: flex;
+        gap: 6%;
+        text-align: center;
+        padding-top:50px ;
+        padding: 2% 10%;
+
+      
+    }
+    .third div{
+        text-align: center ;
+        
+    }
+    .feature1,.feature2,.download,.contact {
+        display: flex;
+        margin: 5% 17%;
+        gap: 6%;
+    }
+    .feature1{
+        padding-top: 7%;
+        padding-bottom: 7%;
+    }
+    .price{
+        display: flex;
+        margin: 5% 17%;
+        gap: 6%;
+    }
+    .fa-mobile{
+        background-color: rgb(0, 200, 255) ; 
+        border-radius: 50%; 
+        padding: 15px;
+        font-size: 20px;
+        color: white;
+    }
+    .pricing{
+        text-align: center;
+    }
+    .contact1{
+        background: linear-gradient( rgba(20, 20, 20, 0.5), rgba(24, 24, 24, 0.5) ),url(./contact-bg.jpg);
+        width: 100vw;
+        height:70vh;
+        color: white;
+        background-size:cover;
+        background-repeat: no-repeat;
+        padding-top: 5%;
+    }
+
+       /* Media Queries */
+        @media (max-width: 1200px) {
+            .third {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .feature1, .feature2, .price {
+                margin: 5% 10%;
+            }
+        }
+
+        @media (max-width: 768px) {
+           
+            .nav {
+                
+                align-items: center;
+            }
+            .nav ul {
+               
+                gap: 10px;
+            }
+            .home h1 {
+                font-size: 1.5rem;
+            }
+            .home p {
+                width: 80%;
+            }
+            .third {
+                padding: 20px 2%;
+            }
+            .feature1, .feature2 {
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+            }
+            .price{
+                flex-direction: column;
+                justify-content: center;
+            }
+            .download {
+                flex-direction: column;
+                align-items: center;
+            }
+            .contact1 {
+                height: 80vh;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav {
+                /* flex-direction: column; */
+                align-items: center;
+
+            }
+            .nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .home h1 {
+                font-size: 1.5rem;
+            }
+            .home p {
+                width: 80%;
+            }
+            .third {
+                padding: 20px 2%;
+            }
+            .feature1, .feature2 {
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+            }
+            .price {
+               
+                flex-direction: column;
+                justify-content: center;
+            }
+            .price > div {
+                width: 100%;
+                margin: 10px 0;
+            }
+            .download {
+                flex-direction: column;
+                align-items: center;
+            }
+            .contact1 {
+                height: 80vh;
+            }
+        }
+        @media (max-width: 768px) {
+            .price {
+                flex-direction: column;
+                align-items: center;
+                width: 100vw;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            .price div {
+                margin: 0px -50%;
+                width: 200%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .price {
+                flex-direction: column;
+                align-items: center;
+            }
+            .price div {
+                margin: 0px -50%;
+                width: 200%;
+            }
+        }
+
+</style>
+<body>
+        <!-- navbar  -->
+        <div class="nav">
+            <div ><b style="display: inline-block; font-size: 25px;font-family: sans-serif; margin-top: 5px; color:  rgb(0, 200, 255);" id="Boxer">Boxer</b></div>
+            <div>
+                <ul>
+                    <li ><a href="#home">HOME</a></li>
+                    <li ><a href="#features">FEATURE</a></li>
+                    <li><a href="#pricing">PRICING</a></li>
+                    <li><a href="#download">DOWNLOAD</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>  
+        <!-- nav ending -->
+        <br><br><br>
+        <!-- image -->
+        <div class="home" id="home">
+            <h1 style="color: rgb(242, 242, 243); padding-top: 4%;">Software Landing Page</h1>
+            <p style="width: 55%; display: inline-block; color: white;">Boxer is a fully Responsive, Clean Design, Modern, and Flexible Software Landing Page for startups, businesses and agencies. It is built with HTML5 & CSS3, Bootstrap 3.3.4, Font Awesome 4.3.0, and much more. Designed by templatemo. Images by Pixabay</p>
+            <br>
+            <img src="./software-img.png" alt="" width="50%">
+
+        </div>
+
+         <!-- this is for third section -->
+        <div class="third" id="third">
+           
+            <div>
+                <i class="fa fa-laptop" aria-hidden="true" style="color:  rgb(0, 200, 255); font-size: 50px;" ></i>
+                <h2>RESPONSIVE LAYOUT</h2>
+                <br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium doloremque consectetur magni commodi tempore sed quia autem dolorem ipsum nesciunt? Tempora necessitatibus culpa quisquam animi, accusantium commodi sint optio repudiandae?</p>
+
+            </div>
+            
+            <div >
+                <i class="fa-brands fa-twitter" style="color: rgb(0, 200, 255) ; font-size: 50px;"></i>
+                <h2>BOOTSTRAP 3.3.4</h2>
+                <br>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium quaerat hic nobis doloribus consequuntur. Nulla praesentium nobis culpa modi incidunt, saepe molestias ex recusandae inventore ea error aut laboriosam provident.</p>
+
+            </div>
+
+            <div >
+                <h1 style="margin: 0px; padding: 0px; font-family: serif; color:  rgb(0, 200, 255) ; font-size: 50px;">A</h1>
+                <h2 style="margin-top: 10px;">RESPONSIVE LAYOUT</h2>
+                <br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In maxime esse laudantium ea error? Enim eum voluptates maiores officia illo ipsum non hic consectetur, facere nulla placeat quaerat, ex quibusdam.</p>
+
+            </div>
+        </div>
+
+        <!-- features part two parts -->
+         <div style="  background-color: rgb(236, 235, 235);">
+        <div class="feature1" id="features">
+            <div>
+                <h1>OUR SOFTWARE FEATURES</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div style="display: flex;">
+                    <i class="fa-solid fa-mobile"></i>
+                    <span style="padding-left: 20px; padding-top: 10px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                </div>
+                <br>
+               <div style="display: flex; width: 100%;">
+                <i class="fa-solid fa-code" style=" background-color: rgb(0, 200, 255); 
+                border-radius: 50%; 
+                padding: 14px 9px;
+                font-size: 20px;
+                color: white;"></i>
+                <span style="padding-left: 20px; padding-top: 10px;">Quis autem velis reprehenderit et quis voluptate velit esse quam.</span>
+                </div>   
+            </div>
+            <img src="./software-img.png" alt="" width="40%">
+        </div>
+    </div>
+    <!-- side by side  -->
+        <div class="feature2">
+            <img src="./software-img.png" alt="" width="40%">
+            <div>
+                <h1>MORE OF YOUR SOFTWARE</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div style="display: flex;">
+                    <i class="fa-solid fa-mobile" style="padding: 10px 15px;"></i>
+                    <span style="padding-left: 20px; padding-top: 10px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                </div>
+                <br>
+               <div style="display: flex; width: 100%;">
+                <i class="fa-solid fa-code" style=" background-color: rgb(0, 200, 255) ; 
+                border-radius: 50%; 
+                padding: 14px 9px;
+                font-size: 20px;
+                color: white;"></i>
+                <span style="padding-left: 20px; padding-top: 10px;">Quis autem velis reprehenderit et quis voluptate velit esse quam.</span>
+                </div> 
+            </div>
+        </div>
+
+        <!-- for pricing part' -->
+         <div style="background-color: rgb(236, 235, 235);"  id="pricing" >
+            <h2 style="text-align: center;padding-top: 20px;">OUR PRICING</h2>
+            <div class="price">
+                <div style="width: 32%;">
+                    <div style="background-color:  rgb(0, 200, 255); text-align: center; color: aliceblue; padding: 10%;  margin-top: 10%;">
+                        <h3>BASIC PLANE</h3>
+                        <H3>$11</H3>
+                        <span>monthly</span>
+                    </div>
+                    <div style="text-align: center; background-color: white; padding-top: 0px;padding: 10%;">
+                        <h5>6 GB SPACE</h5>
+                        <H5>600 GB BANDWIDTH</H5>
+                        <H5>60 MORE THEMES</H5>
+                        <H5>LIFETIME SUPPORT </H5>
+                        <br>
+                        <button style="border:1px solid  rgb(0, 200, 255);color:  rgb(0, 200, 255); padding: 5px 30px;"><b>SIG  UP</b></button>
+                    </div>
+                </div>
+
+                <div style="width: 32%;">
+                    <div style="background-color:  rgb(0, 200, 255); text-align: center; color: aliceblue; padding-bottom: 20px; padding: 10%;">
+                        <h3>BUSINESS PLANE</h3>
+                        <H3>$22</H3>
+                        <span>monthly</span>
+                    </div>
+                    <div style="text-align: center; background-color: white;padding: 10%;">
+                        <h5>15 GB SPACE</h5>
+                        <H5>1500 GB BANDWIDTH</H5>
+                        <H5>150 MORE THEMES</H5>
+                        <H5>LIFETIME SUPPORT </H5>
+                        <br>
+                        <button style="border:1px solid  rgb(0, 200, 255);color:  rgb(0, 200, 255); padding: 5px 30px;"><b>SIG  UP</b></button>
+                    </div>
+                </div>
+
+
+               
+
+                 <div style="width: 32%; ">
+                    <div style="background-color:  rgb(0, 200, 255); text-align: center; color: aliceblue; padding-bottom: 20px;  padding: 10%; margin-top: 10%;">
+                        <h3>PRO PLANE</h3>
+                        <H3>$33</H3>
+                        <span>monthly</span>
+                    </div>
+                    <div style="text-align: center; background-color: white; padding-top: 0px ; padding: 10%;">
+                        <h5>35 GB SPACE</h5>
+                        <H5>3500 GB BANDWIDTH</H5>
+                        <H5>350 MORE THEMES</H5>
+                        <H5>LIFETIME SUPPORT </H5>
+                        <br>
+                        <button style="border:1px solid  rgb(0, 200, 255);color:  rgb(0, 200, 255); padding: 5px 30px;"><b>SIG  UP</b></button>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+         </div>
+         <!-- DOWNLOAD -->
+         <div class="feature2" id="download">
+            
+            <div>
+                <h1>DOWNLOAD OUR SOFTWARE</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                <button style="padding: 10px 5vw; background-color: #2b71c1; color: white; margin-top: 25px; border: none;"><i class="fa-solid fa-download"></i> <b>BUTTION</b></button>
+                <br>
+            </div>
+            <img src="./software-img.png"  alt="" width="40%">
+        </div>
+
+
+        <!-- contact details -->
+         <DIV class="contact1" id="contact">
+        <div class="contact">
+            <div style="width=50%">
+                <h2>CONTACT US</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                <div style="display: flex;">
+                    <i class="fa-solid fa-location-dot" style=" background-color: rgb(0, 200, 255) ; border-radius: 50%; padding: 14px; font-size: 20px;color: white;"></i>&nbsp;
+                    <span style="margin-top: 10px;">36 Street Name, City Name, United States</span>
+                </div>
+                <br>
+                <div style="display: flex;">
+                    <i class="fa-solid fa-phone"  style=" background-color: rgb(0, 200, 255) ; border-radius: 50%; padding: 11px; font-size: 20px;color: white;"></i>&nbsp;
+                    <span  style="margin-top: 15px;">010-010-0110 or 020-020-0220</span>
+
+                </div>
+                <br>
+                <div style="display: flex;">
+                    <i class="fa-regular fa-envelope"  style=" background-color: rgb(0, 200, 255) ; border-radius: 50%; padding: 10px; font-size: 20px;color: white;"></i>&nbsp;
+                    <span  style="margin-top: 15px;"> info@company.com</span>
+                </div>
+            </div>
+            <div style="width: 100vw; height: auto;">
+                <br><br>
+                <input type="text" placeholder="name" style="width: 48%; height: 45px;">
+                &nbsp;
+                <input type="email" name="" id="" placeholder="email" style="width: 48%;  height: 45px;">
+                <br>
+                <br>
+                <input type="text" name="" id="" placeholder="subject" style="width: 100%;  height: 45px;">
+                <br>
+                <br>
+                <textarea name="" id="" style="width: 100%; height: 29%;"></textarea>
+                <br><br>
+                <button style="padding: 10px 30%; border: none; background-color: rgb(0, 200, 255);"><b>SEND</b></button>
+                <br><br><br>
+            </div>
+        </div>
+        
+    </DIV>
+</body>
+</html>
